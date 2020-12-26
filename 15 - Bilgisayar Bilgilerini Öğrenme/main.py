@@ -8,20 +8,19 @@
 
 """
 
-import os
-
-b = os.uname()
+import platform as b 
+                
 print(b)
 print("""
-    İşletim sistemi : {} {}
+    İşletim sistemi : {}   
     Bilgisayar adı  : {}
     Sürüm           : {}
     Sürüm tarihi    : {}
 """.format(
-    b.sysname, b.machine,
-    b.nodename,
-    b.release,
-    b.version))
+    b.system(),  # burayı kestim
+    b.node(),    # sadece node kullandım
+    b.release(), # burası ve alt satır aynı kalıyor
+    b.version))   
 
 """
     Uygulamayı çalıştırdığınızda böyle bir sonuç elde etmeniz lazım
